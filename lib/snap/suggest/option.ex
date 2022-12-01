@@ -6,19 +6,22 @@ defmodule Snap.Suggest.Option do
     freq
     score
     text
+    collate_match
   ]a
 
   def new(response) do
     %__MODULE__{
       freq: response["freq"],
       score: response["score"],
-      text: response["text"]
+      text: response["text"],
+      collate_match: response["collate_match"]
     }
   end
 
   @type t :: %__MODULE__{
           freq: integer(),
           score: float(),
-          text: String.t()
+          text: String.t(),
+          collate_match: boolean()
         }
 end
